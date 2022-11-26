@@ -3,9 +3,9 @@ int deq();
 void enq(int a);
 void display();
 
-int front=rear=-1,queue[5];
+int front=-1,rear=-1,queue[5];
 void main()
-{	int op,m,n
+{	int op,m,n;
 	while(op!=4)
 	{	printf("\nChoose operation\n1-Enqueue\n2-Dequeue\n3-Display\n4-Exit\n");
 		scanf("%d",&op);
@@ -13,7 +13,7 @@ void main()
 		{	case 1: printf("Enter element to be enqueued: ");
 				scanf("%d",&m);
 				enq(m);break;
-			case 2: n=deq();
+			case 2: n= deq();
 				if(n==89457)
 				{	printf("Queue underflow");
 				}
@@ -39,7 +39,7 @@ void enq(int a)
 		queue[rear]=a;
 	}
 }
-int dequeue()
+int deq()
 {	if(front==-1 && rear==-1)
 	{	return 89457;
 	}
@@ -54,7 +54,7 @@ int dequeue()
 		return queue[c];
 	}
 }
-display()
+void display()
 {	if(front<rear)
 	{	for(int i=front;i<=rear;i++)
 		{	printf("%d\t",queue[i]);
@@ -62,6 +62,7 @@ display()
 	}
 	else if(front==-1)
 	{	printf("Empty Queue");
+	}
 	else if(front==rear && front!=-1)
 	{	printf("%d",queue[front]);
 	}
@@ -73,7 +74,6 @@ display()
 		{	printf("%d\n",queue[i]);
 		}
 	}
-}
-		
+}		
 
 				
